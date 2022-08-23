@@ -12,9 +12,9 @@ public class UserRepository {
 
     static{
         users = new ArrayList<>();
-        users.add(new UserDTO("joohan", "joorgasm", "1207", 37, "male"));
-        users.add(new UserDTO("tk", "dolgot2", "0827",37, "female"));
-        users.add(new UserDTO("kyungjin", "meat", "0814", 37, "shemale"));
+        users.add(new UserDTO("joohan", "joorgasm", "1207", 37, "male",""));
+        users.add(new UserDTO("tk", "dolgot2", "0827",37, "female",""));
+        users.add(new UserDTO("kyungjin", "meat", "0814", 37, "shemale",""));
     }
 
     public UserDTO insertUser(UserDTO user){
@@ -30,14 +30,14 @@ public class UserRepository {
         return users.stream()
                 .filter(userDTO -> userDTO.getUserId().equals(userId))
                 .findAny()
-                .orElse(new UserDTO(" ", " ", " ",0,""));
+                .orElse(new UserDTO(" ", " ", " ",0,"",""));
     }
 
     public void updateUserPw(String userId, UserDTO user){
         users.stream()
                 .filter(userDTO -> userDTO.getUserId().equals(userId))
                 .findAny()
-                .orElse(new UserDTO(" "," "," ",0," "))
+                .orElse(new UserDTO(" "," "," ",0," ",""))
                 .setUserPw(user.getUserPw());
     }
 
