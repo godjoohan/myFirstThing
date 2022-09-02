@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 public class UserService {
-    @Autowired // userService랑 userRepository 의존성 설정
+    @Autowired //
     UserRepository userRepository;
 
     public UserDTO insertUser(UserDTO user){
